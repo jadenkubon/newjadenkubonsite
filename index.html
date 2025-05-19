@@ -75,9 +75,9 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Full Width) -->
     <section
-        class="relative text-center bg-gray-900 flex flex-col justify-center items-center px-4 h-[60vh] overflow-hidden">
+        class="relative text-center bg-gray-900 flex flex-col justify-center items-center px-4 h-[60vh] overflow-hidden w-full">
         <img src="https://jadenkubon.com/images/jaden-headshot.png" alt="Jaden Ku Hero"
             class="absolute inset-0 w-full h-full object-cover object-[center_27%] opacity-10 pointer-events-none" />
         <div class="relative z-10 mt-12">
@@ -89,222 +89,292 @@
         </div>
     </section>
 
-    <!-- Divider Line Above About Me -->
-    <div class="pt-8 flex justify-center">
-        <div class="w-[1200px] h-px bg-gray-700"></div>
+    <!-- Main Content and Contact Side-by-Side -->
+    <div class="flex flex-col lg:flex-row w-full max-w-7xl mx-auto px-4 gap-8">
+        <!-- Left: Main Content (2/3) -->
+        <div class="w-full lg:w-2/3 min-w-0">
+            <!-- Divider Line Above About Me -->
+            <div class="pt-8 flex justify-center">
+                <div class="w-[1200px] h-px bg-gray-700"></div>
+            </div>
+
+            <!-- About me Section -->
+            <section id="about" class="py-8">
+                <div class="max-w-4xl mx-auto px-4">
+                    <div class="text-center mb-4">
+                        <h3 class="text-2xl font-bold inline-block text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">
+                            About Me
+                        </h3>
+                    </div>
+
+                    <p class="text-sm text-gray-400">
+                        I'm Jaden Kubon, a creative developer and marketer passionate about blending clean development with
+                        strategic marketing to create impactful digital experiences. I love working with modern tools and
+                        frameworks while continuously pushing the boundaries of what's possible.
+                    </p>
+                </div>
+            </section>
+
+            <section id="stats">
+                <div class="max-w-4xl mx-auto px-4 flex text-center">
+                    <div class="stat-module flex-1 flex flex-col items-center border-l border-r border-gray-600">
+                        <h2 class="text-2xl font-bold">6.4M+</h2>
+                        <p class="text-sm text-gray-400">TikTok Views</p>
+                    </div>
+                    <div class="stat-module flex-1 flex flex-col items-center border-l border-r border-gray-600">
+                        <h2 class="text-2xl font-bold">100K+</h2>
+                        <p class="text-sm text-gray-400">YouTube Views</p>
+                    </div>
+                    <div class="stat-module flex-1 flex flex-col items-center border-l border-r border-gray-600">
+                        <h2 class="text-2xl font-bold">1K+</h2>
+                        <p class="text-sm text-gray-400">Discord Members</p>
+                    </div>
+                    <div class="stat-module flex-1 flex flex-col items-center border-l border-r border-gray-600">
+                        <h2 class="text-2xl font-bold">25+</h2>
+                        <p class="text-sm text-gray-400">Client Projects</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="py-8">
+                <div class="max-w-6xl mx-auto px-4">
+                    <div class="text-left mb-4">
+                        <h3 class="text-2xl font-bold inline-block text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">
+                            Skills
+                        </h3>
+                    </div>
+                    <div id="skills-modules" class="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                        <div
+                            class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                            <img src="./images/JavaScript-logo-transparent.png" alt="JavaScript"
+                                class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-semibold">JavaScript</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                            <img src="./images/react-logo-transparent.png" alt="React"
+                                class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-semibold">React</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                            <img src="./images/Adobe_Photoshop_CC_icon.svg.png" alt="Photoshop"
+                                class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-semibold">Photoshop</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                            <img src="./images/Adobe_Premiere_Pro_CC_icon.svg.png" alt="Premiere Pro"
+                                class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-semibold">Premiere Pro</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                            <img src="./images/css.png" alt="CSS"
+                                class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-semibold">CSS</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                            <img src="./images/html.png" alt="HTML"
+                                class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-semibold">HTML</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                            <img src="./images/wd_press_logo.webp" alt="WordPress"
+                                class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-semibold">WordPress</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                            <img src="./images/webflow.jpg" alt="Webflow"
+                                class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-semibold">Webflow</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                            <img src="./images/stripo_logo.png" alt="Stripo"
+                                class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-semibold">Stripo</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                            <img src="./images/figma_logo.png" alt="Figma"
+                                class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-semibold">Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="pt-8 flex justify-center">
+                <div class="w-[1200px] h-px bg-gray-700"></div>
+            </div>
+            <!-- Work Section -->
+            <section id="work" class="py-8">
+                <div class="max-w-6xl mx-auto px-4">
+                    <h3 class="text-2xl text-left font-bold mb-6 text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">
+                        Projects</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <a href="https://www.linkedin.com/in/jaden-kubon/#projects" target="_blank" rel="noopener noreferrer" class="block hover:no-underline focus:outline-none">
+                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between transform transition-transform duration-200 hover:scale-105">
+                                <div>
+                                    <img src="./images/ocharleysand99-withbackground.jpg" alt="99 Restaurants & O'Charley's" class="w-full h-32 object-cover rounded-md mb-4">
+                                    <div class="flex items-start mb-2">
+                                        <img src="https://img.icons8.com/ios-filled/24/ffffff/email.png" alt="Email Marketing" class="h-5 w-5 mr-2 flex-shrink-0">
+                                        <h4 class="text-lg font-semibold flex-1 min-w-0 break-words">99 Restaurants & O'Charley's - Loyalty Email Programs</h4>
+                                    </div>
+                                    <p class="text-sm text-gray-400">Managed end-to-end lifecycle of loyalty program emails, including development, QA, deployment, and scheduling for customer retention and engagement strategies.</p>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="text-xs text-gray-500">Jun 2024 - Present</span>
+                                    <div class="mt-2">
+                                        <span class="text-xs text-gray-400">Skills: HTML5 · CSS · Email Marketing · JavaScript</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.createboard.com/" target="_blank" rel="noopener noreferrer" class="block hover:no-underline focus:outline-none">
+                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between transform transition-transform duration-200 hover:scale-105">
+                                <div>
+                                    <img src="./images/lgmicrositeimage.jpg" alt="LG's CreateBoard Microsite" class="w-full h-32 object-cover rounded-md mb-4">
+                                    <div class="flex items-start mb-2">
+                                        <img src="https://img.icons8.com/ios-filled/24/ffffff/code.png" alt="Web Development" class="h-5 w-5 mr-2 flex-shrink-0">
+                                        <h4 class="text-lg font-semibold flex-1 min-w-0 break-words">LG's CreateBoard Microsite</h4>
+                                    </div>
+                                    <p class="text-sm text-gray-400">Developed interactive features using React.JS and TypeScript, including navbar implementation and customer contact forms, while ensuring responsive design and functionality.</p>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="text-xs text-gray-500">Apr 2024 - May 2024</span>
+                                    <div class="mt-2">
+                                        <span class="text-xs text-gray-400">Skills: HTML5 · CSS · JavaScript · Figma</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.climeco.com/" target="_blank" rel="noopener noreferrer" class="block hover:no-underline focus:outline-none">
+                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between transform transition-transform duration-200 hover:scale-105">
+                                <div>
+                                    <img src="./images/climecoimage.jpg" alt="ClimeCo" class="w-full h-32 object-cover rounded-md mb-4">
+                                    <div class="flex items-start mb-2">
+                                        <img src="https://img.icons8.com/ios-filled/24/ffffff/wordpress.png" alt="WordPress" class="h-5 w-5 mr-2 flex-shrink-0">
+                                        <h4 class="text-lg font-semibold flex-1 min-w-0 break-words">ClimeCo Website Migration</h4>
+                                    </div>
+                                    <p class="text-sm text-gray-400">Led content and functionality transition from old to new website, including blog migration, feature updates, and comprehensive QA testing.</p>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="text-xs text-gray-500">Feb 2024</span>
+                                    <div class="mt-2">
+                                        <span class="text-xs text-gray-400">Skills: WordPress · Photoshop · CSS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Right: Contact + Athlete Modules (1/3) as a single column -->
+        <div class="w-full lg:w-1/3 min-w-0 lg:pl-8 pt-12 flex-shrink-0 flex flex-col gap-8">
+            <section id="contact" class="bg-gray-900 h-full flex items-start">
+                <div class="max-w-md mx-auto bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-8 text-center w-full">
+                    <div class="flex flex-col items-center mb-4">
+                        <div class="bg-blue-600 rounded-full p-2 mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm-8 0V8a4 4 0 018 0v4" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">Get in Touch</h3>
+                    </div>
+                    <p class="text-gray-400 mb-8">I'd love to connect! Reach out via your preferred method below and I'll get back to you as soon as possible.</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <a href="mailto:jkubon8698@gmail.com" class="flex items-center gap-4 bg-gray-700 hover:bg-blue-700 transition-colors rounded-lg p-4 border border-gray-600 text-left group">
+                            <div class="bg-blue-600 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm-8 0V8a4 4 0 018 0v4" /></svg>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">Email</div>
+                                <div class="text-xs text-gray-300 group-hover:text-white transition">jkubon8698@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="tel:8643545995" class="flex items-center gap-4 bg-gray-700 hover:bg-blue-700 transition-colors rounded-lg p-4 border border-gray-600 text-left group">
+                            <div class="bg-blue-600 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A2 2 0 007.48 19h9.04a2 2 0 001.83-1.3L21 13M7 13l1.5-6h7l1.5 6" /></svg>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">Phone</div>
+                                <div class="text-xs text-gray-300 group-hover:text-white transition">(864) 354-5995</div>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jaden-kubon/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-gray-700 hover:bg-blue-700 transition-colors rounded-lg p-4 border border-gray-600 text-left group">
+                            <div class="bg-blue-600 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 01-12 0 6 6 0 0112 0zm-6 8v4m0 0H6m6 0h6" /></svg>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">LinkedIn</div>
+                                <div class="text-xs text-gray-300 group-hover:text-white transition">linkedin.com/in/jaden-kubon</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Student-Athlete Website Module (Card Style) -->
+            <section class="py-12 bg-gray-900 h-full flex items-start">
+                <div class="max-w-md mx-auto bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-8 w-full text-center flex flex-col items-center relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background: url('./images/soccerfield-backdrop.jpg') center/cover;"></div>
+                    <div class="relative w-full flex flex-col items-center">
+                        <div class="flex flex-col items-center mb-4">
+                            <h3 class="text-xl font-bold text-white mb-2">Showcase Your Student-Athlete with a Custom Website</h3>
+                        </div>
+                        <div class="text-green-400 font-extrabold text-lg mb-2">Build a Digital Resume That Gets Recruited</div>
+                        <ul class="mb-6 space-y-2 text-gray-200 text-left w-full max-w-xs mx-auto">
+                            <li class="flex items-start"><span class="mr-2">🎥</span>Embedded highlight videos and stats</li>
+                            <li class="flex items-start"><span class="mr-2">📈</span>Academic and athletic resume</li>
+                            <li class="flex items-start"><span class="mr-2">🏅</span>Awards, photos, and combine results</li>
+                            <li class="flex items-start"><span class="mr-2">🧑‍💼</span>Coach and contact information</li>
+                            <li class="flex items-start"><span class="mr-2">🌐</span>Custom domain and mobile-ready design</li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-4 w-full max-w-xs mx-auto">
+                            <a href="#" class="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg text-center text-lg transition">Book a Call</a>
+                            <a href="#" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg text-center text-lg transition">View Demo Site</a>
+                        </div>
+                        <div class="bg-gray-700 bg-opacity-80 rounded p-3 text-sm text-gray-200 italic max-w-xs mx-auto">
+                            "The website made it so easy for coaches and colleges to see my son's highlights and stats!"<br><span class="block mt-2 text-green-400 font-semibold">— Parent of a Student-Athlete</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
-
-    <!-- About me Section -->
-    <section id="about" class="py-8">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-4">
-                <h3 class="text-2xl font-bold inline-block text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">
-                    About Me
-                </h3>
-            </div>
-
-            <p class="text-sm text-gray-400">
-                I'm Jaden Kubon, a creative developer and marketer passionate about blending clean development with
-                strategic marketing to create impactful digital experiences. I love working with modern tools and
-                frameworks while continuously pushing the boundaries of what's possible.
-            </p>
-        </div>
-    </section>
-
-    <section id="stats">
-        <div class="max-w-4xl mx-auto px-4 flex text-center">
-            <div class="stat-module flex-1 flex flex-col items-center border-l border-r border-gray-600">
-                <h2 class="text-2xl font-bold">6.4M+</h2>
-                <p class="text-sm text-gray-400">TikTok Views</p>
-            </div>
-            <div class="stat-module flex-1 flex flex-col items-center border-l border-r border-gray-600">
-                <h2 class="text-2xl font-bold">100K+</h2>
-                <p class="text-sm text-gray-400">YouTube Views</p>
-            </div>
-            <div class="stat-module flex-1 flex flex-col items-center border-l border-r border-gray-600">
-                <h2 class="text-2xl font-bold">1K+</h2>
-                <p class="text-sm text-gray-400">Discord Members</p>
-            </div>
-            <div class="stat-module flex-1 flex flex-col items-center border-l border-r border-gray-600">
-                <h2 class="text-2xl font-bold">25+</h2>
-                <p class="text-sm text-gray-400">Client Projects</p>
-            </div>
-        </div>
-    </section>
-    
-
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-8">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-left mb-4">
-                <h3 class="text-2xl font-bold inline-block text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">
-                    Skills
-                </h3>
-            </div>
-            <div id="skills-modules" class="grid grid-cols-2 sm:grid-cols-5 gap-4">
-                <div
-                    class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
-                    <img src="./images/JavaScript-logo-transparent.png" alt="JavaScript"
-                        class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-white font-semibold">JavaScript</span>
-                    </div>
-                </div>
-                <div
-                    class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
-                    <img src="./images/react-logo-transparent.png" alt="React"
-                        class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-white font-semibold">React</span>
-                    </div>
-                </div>
-                <div
-                    class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
-                    <img src="./images/Adobe_Photoshop_CC_icon.svg.png" alt="Photoshop"
-                        class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-white font-semibold">Photoshop</span>
-                    </div>
-                </div>
-                <div
-                    class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
-                    <img src="./images/Adobe_Premiere_Pro_CC_icon.svg.png" alt="Premiere Pro"
-                        class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-white font-semibold">Premiere Pro</span>
-                    </div>
-                </div>
-                <div
-                    class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
-                    <img src="./images/css.png" alt="CSS"
-                        class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-white font-semibold">CSS</span>
-                    </div>
-                </div>
-                <div
-                    class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
-                    <img src="./images/html.png" alt="HTML"
-                        class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-white font-semibold">HTML</span>
-                    </div>
-                </div>
-                <div
-                    class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
-                    <img src="./images/wd_press_logo.webp" alt="WordPress"
-                        class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-white font-semibold">WordPress</span>
-                    </div>
-                </div>
-                <div
-                    class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
-                    <img src="./images/webflow.jpg" alt="Webflow"
-                        class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-white font-semibold">Webflow</span>
-                    </div>
-                </div>
-                <div
-                    class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
-                    <img src="./images/stripo_logo.png" alt="Stripo"
-                        class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-white font-semibold">Stripo</span>
-                    </div>
-                </div>
-                <div
-                    class="group bg-gray-800 rounded-lg p-4 border border-gray-700 flex items-center justify-center relative overflow-hidden">
-                    <img src="./images/figma_logo.png" alt="Figma"
-                        class="h-12 w-auto group-hover:scale-110 transition-transform duration-300 object-contain">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-white font-semibold">Figma</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="pt-8 flex justify-center">
-        <div class="w-[1200px] h-px bg-gray-700"></div>
-    </div>
-    <!-- Work Section -->
-    <section id="work" class="py-8">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-2xl text-left font-bold mb-6 text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">
-                Projects</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between">
-                    <div>
-                        <img src="https://img.icons8.com/ios-filled/50/ffffff/dog.png" alt="Pugpig"
-                            class="h-6 w-6 mb-4">
-                        <h4 class="text-lg font-semibold mb-2">Celebrating 2 years coding with my 30th App launch
-                        </h4>
-                        <p class="text-sm text-gray-400">Celebrating two years working with the digital publishing
-                            platform Pugpig...</p>
-                    </div>
-                    <span class="text-xs text-gray-500 mt-4">Mar 2025</span>
-                </div>
-                <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between">
-                    <div>
-                        <img src="https://img.icons8.com/ios-filled/50/ffffff/medium-logo.png" alt="DatoCMS"
-                            class="h-6 w-6 mb-4">
-                        <h4 class="text-lg font-semibold mb-2">Migrated blog to DatoCMS + GraphQL</h4>
-                        <p class="text-sm text-gray-400">I've relied on a combination of Notion & Medium to manage
-                            content on my blog...</p>
-                    </div>
-                    <span class="text-xs text-gray-500 mt-4">Dec 2023</span>
-                </div>
-                <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between">
-                    <div>
-                        <img src="https://img.icons8.com/ios-filled/50/ffffff/dog.png" alt="Pugpig"
-                            class="h-6 w-6 mb-4">
-                        <h4 class="text-lg font-semibold mb-2">Joined digital publishing platform Pugpig</h4>
-                        <p class="text-sm text-gray-400">The stars aligned allowing me to transition my career...
-                        </p>
-                    </div>
-                    <span class="text-xs text-gray-500 mt-4">Mar 2023</span>
-                </div>
-                <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between">
-                    <div>
-                        <img src="https://img.icons8.com/ios-filled/50/ffffff/lightning-bolt.png" alt="NextJS"
-                            class="h-6 w-6 mb-4">
-                        <h4 class="text-lg font-semibold mb-2">Rebuilt personal site with NextJS</h4>
-                        <p class="text-sm text-gray-400">One of my favourite designers S J Zhang kindly made his
-                            site
-                            build public...</p>
-                    </div>
-                    <span class="text-xs text-gray-500 mt-4">Mar 2023</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="pt-8 flex justify-center">
-        <div class="w-[1200px] h-px bg-gray-700"></div>
-    </div>
-    <!-- Contact Section -->
-    <section id="contact" class="py-8">
-        <div class="max-w-xl mx-auto px-4 text-center">
-            <h3 class="text-2xl font-bold mb-4 text-white">Get in Touch</h3>
-            <p class="text-sm text-gray-400 mb-6">Email: <a href="mailto:jkubon8698@gmail.com"
-                    class="text-blue-400">jkubon8698@gmail.com</a></p>
-            <p class="text-sm text-gray-400 mb-6">Phone: <a href="tel:8643545995" class="text-blue-400">(864)
-                    354-5995</a></p>
-            <p class="text-sm text-gray-400 mb-6">LinkedIn: <a href="https://www.linkedin.com/in/jaden-kubon/"
-                    class="text-blue-400">linkedin.com/in/jaden-kubon</a></p>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 py-6 text-center text-xs text-gray-600 border-t border-gray-800">
