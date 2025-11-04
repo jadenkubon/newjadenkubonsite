@@ -7,6 +7,7 @@
     <title>Jaden Kubon | Web Developer & Marketer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -14,12 +15,28 @@
         #stats .stat-module {
             position: relative;
             transition: background-color 0.2s ease;
-            /* Faster transition */
             padding-top: 0.25rem;
-            /* py-1 equivalent */
             padding-bottom: 0.25rem;
-            user-select: none; /* Disable text selection */
+            user-select: none;
             cursor: default;
+        }
+
+        #stats .stat-module h2 {
+            font-size: 1.5rem;
+        }
+
+        #stats .stat-module p {
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 640px) {
+            #stats .stat-module h2 {
+                font-size: 1.25rem;
+            }
+
+            #stats .stat-module p {
+                font-size: 0.75rem;
+            }
         }
 
         #stats .stat-module::before,
@@ -30,10 +47,8 @@
             right: 0;
             height: 2px;
             background-color: #374151;
-            /* Tailwind gray-700 */
             transform: scaleX(0);
             transition: transform 0.2s ease;
-            /* Faster transition */
             transform-origin: center;
         }
 
@@ -54,8 +69,212 @@
             transform: scaleX(1);
         }
         #skills-modules {
-            user-select: none; /* Disable text selection */
+            user-select: none;
             cursor: default;
+        }
+
+        /* Contact section styles */
+        #contact-container {
+            position: sticky;
+            top: 100px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        @media (max-width: 1023px) {
+            #contact-container {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1000;
+                width: 90%;
+                max-width: 400px;
+            }
+
+            #contact-container.active {
+                display: block;
+            }
+
+            #contact-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+
+            #contact-overlay.active {
+                display: block;
+            }
+
+            #contact-button {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 998;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: #2563eb;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+
+            #contact-button:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #contact-button {
+                display: none;
+            }
+        }
+
+        /* Project navigation styles */
+        .projects-container {
+            position: relative;
+            overflow: visible;
+            padding: 0 40px;
+        }
+
+        .project-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(37, 99, 235, 0.9);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .project-nav-button:hover {
+            background: rgba(37, 99, 235, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .project-nav-button.prev {
+            left: 0;
+        }
+
+        .project-nav-button.next {
+            right: 0;
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .project-card > div {
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover > div {
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 640px) and (max-width: 1023px) {
+            .projects-container {
+                padding: 0 60px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .projects-container {
+                padding: 0;
+            }
+            .project-nav-button {
+                display: none;
+            }
+        }
+
+        .project-card.hidden {
+            display: none;
+        }
+
+        /* Student Athlete section styles */
+        @media (min-width: 640px) and (max-width: 1023px) {
+            .student-athlete-container {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 2rem !important;
+                align-items: flex-start !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+
+            .student-athlete-container > div {
+                width: 100% !important;
+            }
+
+            .student-athlete-left {
+                flex: 1 !important;
+                text-align: left !important;
+                padding-right: 1rem !important;
+            }
+
+            .student-athlete-right {
+                flex: 1 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                height: 100% !important;
+                padding-left: 1rem !important;
+            }
+
+            .student-athlete-cta {
+                margin-bottom: 1.5rem !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                height: 100% !important;
+            }
+
+            .student-athlete-cta > div {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100% !important;
+            }
+
+            .student-athlete-quote {
+                margin-top: auto !important;
+            }
+
+            .student-athlete-container .flex.flex-col.items-center {
+                flex-direction: row !important;
+                align-items: center !important;
+                width: 100% !important;
+            }
+        }
+
+        @media (max-width: 639px) {
+            .student-athlete-container {
+                max-width: 100% !important;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .student-athlete-container {
+                max-width: 28rem !important;
+            }
         }
     </style>
 </head>
@@ -65,32 +284,60 @@
     <header class="bg-gray-800 shadow-md sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-lg font-bold text-white">Jaden Kubon</h1>
-            <nav class="space-x-4 text-sm font-medium">
-                <a href="#about" class="text-gray-300 hover:text-blue-400">About</a>
-                <a href="#stats" class="text-gray-300 hover:text-blue-400">Stats</a>
-                <a href="#skills" class="text-gray-300 hover:text-blue-400">Skills</a>
-                <a href="#work" class="text-gray-300 hover:text-blue-400">Projects</a>
-                <a href="#contact" class="text-gray-300 hover:text-blue-400">Contact</a>
-            </nav>
+            <button id="contact-nav-button" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition-colors duration-200 text-sm font-medium flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                Contact Me
+            </button>
         </div>
     </header>
 
     <!-- Hero Section (Full Width) -->
     <section
         class="relative text-center bg-gray-900 flex flex-col justify-center items-center px-4 h-[60vh] overflow-hidden w-full">
-        <img src="https://jadenkubon.com/images/jaden-headshot.png" alt="Jaden Ku Hero"
+        <img id="hero-bg-img" src="https://jadenkubon.com/images/jaden-headshot.png" alt="Jaden Kubon Hero"
             class="absolute inset-0 w-full h-full object-cover object-[center_27%] opacity-10 pointer-events-none" />
         <div class="relative z-10 mt-12">
             <h2 class="text-4xl md:text-5xl font-extrabold mb-3 text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">
-                Hi, I'm Jaden Kubon</h2>
-            <p class="text-base md:text-lg max-w-xl mx-auto text-gray-400">
+                <span id="hero-typed-text"></span>
+            </h2>
+            <p id="hero-subheader" class="text-base md:text-lg max-w-xl mx-auto text-gray-400 opacity-0">
                 Web Developer & Marketing Strategist. I design and build elegant digital solutions.
             </p>
         </div>
     </section>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const text = "Hi, I'm Jaden Kubon";
+        const target = document.getElementById('hero-typed-text');
+        const subheader = document.getElementById('hero-subheader');
+        const heroImg = document.getElementById('hero-bg-img');
+        // Animate hero image fade-in
+        gsap.fromTo(heroImg, { opacity: 0 }, { opacity: 0.1, duration: 0.5, delay: 0.3 });
+        target.textContent = '';
+        gsap.to({}, {
+          duration: 0,
+          onComplete: () => {
+            let i = 0;
+            function typeChar() {
+              if (i <= text.length) {
+                target.textContent = text.slice(0, i);
+                i++;
+                setTimeout(typeChar, 60);
+              } else {
+                gsap.to(subheader, { opacity: 1, duration: 0.8, delay: 0.2 });
+              }
+            }
+            typeChar();
+          }
+        });
+      });
+    </script>
+
     <!-- Main Content and Contact Side-by-Side -->
-    <div class="flex flex-col lg:flex-row w-full max-w-7xl mx-auto px-4 gap-8">
+    <div class="flex flex-col lg:flex-row w-full max-w-7xl mx-auto px-4 gap-0 lg:gap-8">
         <!-- Left: Main Content (2/3) -->
         <div class="w-full lg:w-2/3 min-w-0">
             <!-- Divider Line Above About Me -->
@@ -130,7 +377,7 @@
                         <p class="text-sm text-gray-400">Discord Members</p>
                     </div>
                     <div class="stat-module flex-1 flex flex-col items-center border-l border-r border-gray-600">
-                        <h2 class="text-2xl font-bold">25+</h2>
+                        <h2 class="text-2xl font-bold">15+</h2>
                         <p class="text-sm text-gray-400">Client Projects</p>
                     </div>
                 </div>
@@ -246,72 +493,86 @@
                 <div class="max-w-6xl mx-auto px-4">
                     <h3 class="text-2xl text-left font-bold mb-6 text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">
                         Projects</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <a href="https://www.linkedin.com/in/jaden-kubon/#projects" target="_blank" rel="noopener noreferrer" class="block hover:no-underline focus:outline-none">
-                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between transform transition-transform duration-200 hover:scale-105">
-                                <div>
-                                    <img src="./images/ocharleysand99-withbackground.jpg" alt="99 Restaurants & O'Charley's" class="w-full h-32 object-cover rounded-md mb-4">
-                                    <div class="flex items-start mb-2">
-                                        <img src="https://img.icons8.com/ios-filled/24/ffffff/email.png" alt="Email Marketing" class="h-5 w-5 mr-2 flex-shrink-0">
-                                        <h4 class="text-lg font-semibold flex-1 min-w-0 break-words">99 Restaurants & O'Charley's - Loyalty Email Programs</h4>
+                    <div class="projects-container">
+                        <button class="project-nav-button prev" aria-label="Previous project">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button class="project-nav-button next" aria-label="Next project">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <a href="https://www.linkedin.com/in/jaden-kubon/#projects" target="_blank" rel="noopener noreferrer" class="block hover:no-underline focus:outline-none project-card">
+                                <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between">
+                                    <div>
+                                        <img src="./images/ocharleysand99-withbackground.jpg" alt="99 Restaurants & O'Charley's" class="w-full h-32 object-cover rounded-md mb-4">
+                                        <div class="flex items-start mb-2">
+                                            <img src="https://img.icons8.com/ios-filled/24/ffffff/email.png" alt="Email Marketing" class="h-5 w-5 mr-2 flex-shrink-0">
+                                            <h4 class="text-lg font-semibold flex-1 min-w-0 break-words">99 Restaurants & O'Charley's - Loyalty Email Programs</h4>
+                                        </div>
+                                        <p class="text-sm text-gray-400">Managed end-to-end lifecycle of loyalty program emails, including development, QA, deployment, and scheduling for customer retention and engagement strategies.</p>
                                     </div>
-                                    <p class="text-sm text-gray-400">Managed end-to-end lifecycle of loyalty program emails, including development, QA, deployment, and scheduling for customer retention and engagement strategies.</p>
-                                </div>
-                                <div class="mt-4">
-                                    <span class="text-xs text-gray-500">Jun 2024 - Present</span>
-                                    <div class="mt-2">
-                                        <span class="text-xs text-gray-400">Skills: HTML5 · CSS · Email Marketing · JavaScript</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="https://www.createboard.com/" target="_blank" rel="noopener noreferrer" class="block hover:no-underline focus:outline-none">
-                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between transform transition-transform duration-200 hover:scale-105">
-                                <div>
-                                    <img src="./images/lgmicrositeimage.jpg" alt="LG's CreateBoard Microsite" class="w-full h-32 object-cover rounded-md mb-4">
-                                    <div class="flex items-start mb-2">
-                                        <img src="https://img.icons8.com/ios-filled/24/ffffff/code.png" alt="Web Development" class="h-5 w-5 mr-2 flex-shrink-0">
-                                        <h4 class="text-lg font-semibold flex-1 min-w-0 break-words">LG's CreateBoard Microsite</h4>
-                                    </div>
-                                    <p class="text-sm text-gray-400">Developed interactive features using React.JS and TypeScript, including navbar implementation and customer contact forms, while ensuring responsive design and functionality.</p>
-                                </div>
-                                <div class="mt-4">
-                                    <span class="text-xs text-gray-500">Apr 2024 - May 2024</span>
-                                    <div class="mt-2">
-                                        <span class="text-xs text-gray-400">Skills: HTML5 · CSS · JavaScript · Figma</span>
+                                    <div class="mt-4">
+                                        <span class="text-xs text-gray-500">Jun 2024 - May 2025</span>
+                                        <div class="mt-2">
+                                            <span class="text-xs text-gray-400">Skills: HTML5 · CSS · Email Marketing · JavaScript</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                        <a href="https://www.climeco.com/" target="_blank" rel="noopener noreferrer" class="block hover:no-underline focus:outline-none">
-                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between transform transition-transform duration-200 hover:scale-105">
-                                <div>
-                                    <img src="./images/climecoimage.jpg" alt="ClimeCo" class="w-full h-32 object-cover rounded-md mb-4">
-                                    <div class="flex items-start mb-2">
-                                        <img src="https://img.icons8.com/ios-filled/24/ffffff/wordpress.png" alt="WordPress" class="h-5 w-5 mr-2 flex-shrink-0">
-                                        <h4 class="text-lg font-semibold flex-1 min-w-0 break-words">ClimeCo Website Migration</h4>
+                            </a>
+                            <a href="https://www.createboard.com/" target="_blank" rel="noopener noreferrer" class="block hover:no-underline focus:outline-none project-card">
+                                <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between">
+                                    <div>
+                                        <img src="./images/lgmicrositeimage.jpg" alt="LG's CreateBoard Microsite" class="w-full h-32 object-cover rounded-md mb-4">
+                                        <div class="flex items-start mb-2">
+                                            <img src="https://img.icons8.com/ios-filled/24/ffffff/code.png" alt="Web Development" class="h-5 w-5 mr-2 flex-shrink-0">
+                                            <h4 class="text-lg font-semibold flex-1 min-w-0 break-words">LG's CreateBoard Microsite</h4>
+                                        </div>
+                                        <p class="text-sm text-gray-400">Developed interactive features using React.JS and TypeScript, including navbar implementation and customer contact forms, while ensuring responsive design and functionality.</p>
                                     </div>
-                                    <p class="text-sm text-gray-400">Led content and functionality transition from old to new website, including blog migration, feature updates, and comprehensive QA testing.</p>
-                                </div>
-                                <div class="mt-4">
-                                    <span class="text-xs text-gray-500">Feb 2024</span>
-                                    <div class="mt-2">
-                                        <span class="text-xs text-gray-400">Skills: WordPress · Photoshop · CSS</span>
+                                    <div class="mt-4">
+                                        <span class="text-xs text-gray-500">Apr 2024 - May 2024</span>
+                                        <div class="mt-2">
+                                            <span class="text-xs text-gray-400">Skills: HTML5 · CSS · JavaScript · Figma</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                            <a href="https://www.climeco.com/" target="_blank" rel="noopener noreferrer" class="block hover:no-underline focus:outline-none project-card">
+                                <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 flex flex-col justify-between">
+                                    <div>
+                                        <img src="./images/climecoimage.jpg" alt="ClimeCo" class="w-full h-32 object-cover rounded-md mb-4">
+                                        <div class="flex items-start mb-2">
+                                            <img src="https://img.icons8.com/ios-filled/24/ffffff/wordpress.png" alt="WordPress" class="h-5 w-5 mr-2 flex-shrink-0">
+                                            <h4 class="text-lg font-semibold flex-1 min-w-0 break-words">ClimeCo Website Migration</h4>
+                                        </div>
+                                        <p class="text-sm text-gray-400">Led content and functionality transition from old to new website, including blog migration, feature updates, and comprehensive QA testing.</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <span class="text-xs text-gray-500">Feb 2024 - Apr 2024</span>
+                                        <div class="mt-2">
+                                            <span class="text-xs text-gray-400">Skills: WordPress · Photoshop · CSS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
         <!-- Right: Contact + Athlete Modules (1/3) as a single column -->
-        <div class="w-full lg:w-1/3 min-w-0 lg:pl-8 pt-12 flex-shrink-0 flex flex-col gap-8">
+        <div class="w-full lg:w-1/3 min-w-0 lg:pl-8 pt-0 lg:pt-12 flex-shrink-0 flex flex-col gap-0 lg:gap-8">
             <section id="contact" class="bg-gray-900 h-full flex items-start">
-                <div class="max-w-md mx-auto bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-8 text-center w-full">
+                <div id="contact-container" class="max-w-md mx-auto bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-8 text-center w-full">
                     <div class="flex flex-col items-center mb-4">
                         <div class="bg-blue-600 rounded-full p-2 mb-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm-8 0V8a4 4 0 018 0v4" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
                         </div>
                         <h3 class="text-2xl font-bold text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">Get in Touch</h3>
                     </div>
@@ -347,28 +608,97 @@
                     </div>
                 </div>
             </section>
+            <div class="block lg:hidden pt-8 flex justify-center">
+                <div class="w-[1200px] h-px bg-gray-700"></div>
+            </div>
             <!-- Student-Athlete Website Module (Card Style) -->
-            <section class="py-12 bg-gray-900 h-full flex items-start">
-                <div class="max-w-md mx-auto bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-8 w-full text-center flex flex-col items-center relative overflow-hidden">
-                    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background: url('./images/soccerfield-backdrop.jpg') center/cover;"></div>
+            <section class="lg:pb-12 py-8 pb-6 px-4 lg:px-0 bg-gray-900 h-full flex items-start">
+                <div class="max-w-md mx-auto bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-8 w-full text-center flex flex-col items-center relative overflow-hidden student-athlete-container">
+                    <div class="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center" style="background-image: url('./images/soccerfield-backdrop.jpg');"></div>
                     <div class="relative w-full flex flex-col items-center">
-                        <div class="flex flex-col items-center mb-4">
-                            <h3 class="text-xl font-bold text-white mb-2">Showcase Your Student-Athlete with a Custom Website</h3>
+                        <div class="student-athlete-left">
+                            <div class="flex flex-col items-center mb-4">
+                                <h3 class="text-xl font-bold text-white mb-2">Showcase Your Student-Athlete with a Custom Website</h3>
+                            </div>
+                            <div class="text-green-400 font-extrabold text-lg mb-2">Build a Digital Resume That Gets Recruited</div>
+                            <ul class="mb-6 space-y-2 text-gray-200 text-left w-full max-w-xs mx-auto">
+                                <li class="flex items-start"><span class="mr-2">🎥</span>Embedded highlight videos and stats</li>
+                                <li class="flex items-start"><span class="mr-2">📈</span>Academic and athletic resume</li>
+                                <li class="flex items-start"><span class="mr-2">🏅</span>Awards, photos, and combine results</li>
+                                <li class="flex items-start"><span class="mr-2">🧑‍💼</span>Coach and contact information</li>
+                                <li class="flex items-start"><span class="mr-2">🌐</span>Custom domain and mobile-ready design</li>
+                            </ul>
                         </div>
-                        <div class="text-green-400 font-extrabold text-lg mb-2">Build a Digital Resume That Gets Recruited</div>
-                        <ul class="mb-6 space-y-2 text-gray-200 text-left w-full max-w-xs mx-auto">
-                            <li class="flex items-start"><span class="mr-2">🎥</span>Embedded highlight videos and stats</li>
-                            <li class="flex items-start"><span class="mr-2">📈</span>Academic and athletic resume</li>
-                            <li class="flex items-start"><span class="mr-2">🏅</span>Awards, photos, and combine results</li>
-                            <li class="flex items-start"><span class="mr-2">🧑‍💼</span>Coach and contact information</li>
-                            <li class="flex items-start"><span class="mr-2">🌐</span>Custom domain and mobile-ready design</li>
-                        </ul>
-                        <div class="flex flex-col sm:flex-row gap-4 mb-4 w-full max-w-xs mx-auto">
-                            <a href="#" class="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg text-center text-lg transition">Book a Call</a>
-                            <a href="#" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg text-center text-lg transition">View Demo Site</a>
+                        <div class="student-athlete-right">
+                            <div class="student-athlete-cta">
+                                <div class="flex flex-col sm:flex-row gap-4 mb-4 w-full max-w-xs mx-auto">
+                                    <a href="#" class="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg text-center text-lg transition">Book a Call</a>
+                                    <a href="#" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg text-center text-lg transition">View Demo Site</a>
+                                </div>
+                            </div>
+                            <div class="student-athlete-quote">
+                                <div class="bg-gray-700 bg-opacity-80 rounded p-3 text-sm text-gray-200 italic max-w-xs mx-auto">
+                                    "The website made it so easy for coaches and colleges to see my son's highlights and stats!"<br><span class="block mt-2 text-green-400 font-semibold">— Parent of a Student-Athlete</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="bg-gray-700 bg-opacity-80 rounded p-3 text-sm text-gray-200 italic max-w-xs mx-auto">
-                            "The website made it so easy for coaches and colleges to see my son's highlights and stats!"<br><span class="block mt-2 text-green-400 font-semibold">— Parent of a Student-Athlete</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile/Tablet Contact Section -->
+            <section class="lg:hidden py-8 px-4 bg-gray-900">
+                <div class="max-w-full mx-auto bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-8 w-full relative overflow-hidden">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <!-- Left side: Title and Subheader -->
+                        <div class="md:w-1/5 flex flex-col items-center md:items-start justify-center">
+                            <div class="bg-blue-600 rounded-full p-2 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.6)] mb-2">Get in Touch</h3>
+                            <p class="text-gray-400 text-sm text-center md:text-left">I'd love to connect! Reach out via your preferred method below.</p>
+                        </div>
+
+                        <!-- Right side: Contact Options -->
+                        <div class="md:w-4/5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <a href="mailto:jkubon8698@gmail.com" class="flex items-center gap-4 bg-gray-700 hover:bg-blue-700 transition-colors rounded-lg p-4 border border-gray-600 text-left group">
+                                <div class="bg-blue-600 p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm-8 0V8a4 4 0 018 0v4" /></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold">Email</div>
+                                    <div class="text-xs text-gray-300 group-hover:text-white transition">jkubon8698@gmail.com</div>
+                                </div>
+                            </a>
+                            <a href="tel:8643545995" class="flex items-center gap-4 bg-gray-700 hover:bg-blue-700 transition-colors rounded-lg p-4 border border-gray-600 text-left group">
+                                <div class="bg-blue-600 p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A2 2 0 007.48 19h9.04a2 2 0 001.83-1.3L21 13M7 13l1.5-6h7l1.5 6" /></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold">Phone</div>
+                                    <div class="text-xs text-gray-300 group-hover:text-white transition">(864) 354-5995</div>
+                                </div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jaden-kubon/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-gray-700 hover:bg-blue-700 transition-colors rounded-lg p-4 border border-gray-600 text-left group">
+                                <div class="bg-blue-600 p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 01-12 0 6 6 0 0112 0zm-6 8v4m0 0H6m6 0h6" /></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold">LinkedIn</div>
+                                    <div class="text-xs text-gray-300 group-hover:text-white transition">linkedin.com/in/jaden-kubon</div>
+                                </div>
+                            </a>
+                            <a href="https://github.com/jadenkubon" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-gray-700 hover:bg-blue-700 transition-colors rounded-lg p-4 border border-gray-600 text-left group">
+                                <div class="bg-blue-600 p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold">GitHub</div>
+                                    <div class="text-xs text-gray-300 group-hover:text-white transition">github.com/jadenkubon</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -376,10 +706,155 @@
         </div>
     </div>
 
+    <!-- Contact Button and Overlay for Mobile -->
+    <div id="contact-overlay"></div>
+    <div id="contact-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-gray-900 py-6 text-center text-xs text-gray-600 border-t border-gray-800">
-        &copy; 2025 Jaden Ku. Built with passion and Tailwind CSS.
+        &copy; 2025 Jaden Kubon. Built with passion and Tailwind CSS.
     </footer>
+
+    <script>
+        // Contact form toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact button scroll functionality
+            const contactNavButton = document.getElementById('contact-nav-button');
+            contactNavButton.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const contactSection = document.getElementById('contact');
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            // Stats counter animation
+            const stats = [
+                { element: document.querySelector('.stat-module:nth-child(1) h2'), value: 6.4, suffix: 'M+' },
+                { element: document.querySelector('.stat-module:nth-child(2) h2'), value: 100, suffix: 'K+' },
+                { element: document.querySelector('.stat-module:nth-child(3) h2'), value: 1, suffix: 'K+' },
+                { element: document.querySelector('.stat-module:nth-child(4) h2'), value: 15, suffix: '+' }
+            ];
+
+            stats.forEach(stat => {
+                const element = stat.element;
+                element.textContent = '0' + stat.suffix;
+                
+                gsap.to(element, {
+                    duration: 4,
+                    ease: "power1.out",
+                    snap: { textContent: 1 },
+                    textContent: stat.value,
+                    onUpdate: function() {
+                        const currentValue = Math.round(parseFloat(element.textContent));
+                        element.textContent = currentValue + stat.suffix;
+                    }
+                });
+            });
+
+            const contactButton = document.getElementById('contact-button');
+            const contactContainer = document.getElementById('contact-container');
+            const contactOverlay = document.getElementById('contact-overlay');
+            const studentAthleteSection = document.querySelector('.student-athlete-container').closest('section');
+            const contactSection = document.getElementById('contact');
+
+            function toggleContact() {
+                contactContainer.classList.toggle('active');
+                contactOverlay.classList.toggle('active');
+            }
+
+            function handleContactDisplay() {
+                const isLargeScreen = window.innerWidth >= 1024;
+                const contactSection = document.getElementById('contact');
+                
+                if (!isLargeScreen) {
+                    // Move contact section after student athlete section
+                    if (contactSection.parentElement !== studentAthleteSection.parentElement) {
+                        studentAthleteSection.after(contactSection);
+                    }
+                    // Show contact section
+                    contactSection.style.display = 'block';
+                    contactSection.style.position = 'relative';
+                    contactSection.style.top = 'auto';
+                    contactSection.style.transform = 'none';
+                } else {
+                    // Move contact section back to its original position
+                    const rightColumn = document.querySelector('.w-full.lg\\:w-1\\/3');
+                    if (contactSection.parentElement !== rightColumn) {
+                        rightColumn.insertBefore(contactSection, rightColumn.firstChild);
+                    }
+                    // Reset contact section styles
+                    contactSection.style.display = '';
+                    contactSection.style.position = '';
+                    contactSection.style.top = '';
+                    contactSection.style.transform = '';
+                }
+            }
+
+            // Initial setup
+            handleContactDisplay();
+
+            // Update on window resize
+            window.addEventListener('resize', handleContactDisplay);
+
+            contactButton.addEventListener('click', toggleContact);
+            contactOverlay.addEventListener('click', toggleContact);
+        });
+
+        // Project navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            const prevButton = document.querySelector('.project-nav-button.prev');
+            const nextButton = document.querySelector('.project-nav-button.next');
+            let currentIndex = 0;
+
+            function updateProjectVisibility() {
+                const isLargeScreen = window.innerWidth >= 1024;
+                const isSmallScreen = window.innerWidth < 640;
+                
+                if (!isLargeScreen) {
+                    projectCards.forEach((card, index) => {
+                        if (isSmallScreen) {
+                            // On mobile, show only one card at a time
+                            card.classList.toggle('hidden', index !== currentIndex);
+                        } else {
+                            // On tablet, show two cards at a time
+                            card.classList.toggle('hidden', index !== currentIndex && index !== currentIndex + 1);
+                        }
+                    });
+                } else {
+                    // On desktop, show all cards
+                    projectCards.forEach(card => {
+                        card.classList.remove('hidden');
+                    });
+                }
+            }
+
+            function navigateProjects(direction) {
+                const isSmallScreen = window.innerWidth < 640;
+                const maxIndex = isSmallScreen ? projectCards.length - 1 : projectCards.length - 2;
+                currentIndex = Math.max(0, Math.min(maxIndex, currentIndex + direction));
+                updateProjectVisibility();
+            }
+
+            prevButton.addEventListener('click', () => navigateProjects(-1));
+            nextButton.addEventListener('click', () => navigateProjects(1));
+
+            // Initial setup
+            updateProjectVisibility();
+
+            // Update on window resize
+            window.addEventListener('resize', updateProjectVisibility);
+        });
+    </script>
 </body>
 
 </html>
