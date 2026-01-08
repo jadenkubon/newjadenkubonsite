@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - JK Portfolios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'anton': ['Anton', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+            <div class="px-4 sm:px-6 lg:px-8">
+              <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                  <a href="home.html" class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center">
+                      <span class="text-white font-anton text-xl leading-none">JK</span>
+                    </div>
+                    <span class="text-xl font-anton tracking-tight text-slate-900 hidden sm:block">PORTFOLIOS</span>
+                  </a>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-4">
+                  <a href="home.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Home</a>
+                  <a href="demo.html" class="px-3 py-2 text-sm font-bold text-slate-900 hover:text-amber-500 transition-colors">Demo</a>
+                  <a href="examples.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Examples</a>
+                  <a href="services.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Services</a>
+                  <a href="process.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Process</a>
+                  <a href="faq.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">FAQ</a>
+                </div>
+      
+                <div class="flex items-center space-x-3">
+                  <a href="demo.html" class="hidden sm:inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-md text-slate-900 bg-amber-400 hover:bg-amber-500 transition-all uppercase tracking-wider">
+                    Try Demo
+                  </a>
+                  <a href="contact.html" class="inline-flex items-center px-4 py-2 border border-slate-900 text-sm font-bold rounded-md text-white bg-slate-900 hover:bg-slate-800 transition-all uppercase tracking-wider">
+                    Book Now
+                  </a>
+                  <button id="mobile-menu-button" class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-slate-900 hover:text-amber-500 transition-colors" aria-label="Menu">
+                    <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Mobile Menu -->
+              <div id="mobile-menu" class="hidden lg:hidden pb-4 border-t border-slate-200 mt-2">
+                <div class="flex flex-col space-y-2 pt-4">
+                  <a href="home.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Home</a>
+                  <a href="demo.html" class="px-3 py-2 text-sm font-bold text-slate-900 hover:text-amber-500 transition-colors">Demo</a>
+                  <a href="examples.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Examples</a>
+                  <a href="services.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Services</a>
+                  <a href="process.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Process</a>
+                  <a href="faq.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">FAQ</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div class="bg-slate-50 min-h-screen">
+      <!-- Demo Header -->
+      <div class="bg-white border-b border-slate-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div>
+            <h1 class="text-3xl font-anton">Interactive Portfolio Demo</h1>
+            <p class="text-slate-600">Rearrange sections, edit text, and pick colors to see your brand in action.</p>
+          </div>
+          <div class="flex items-center gap-4">
+             <button 
+              id="customize-btn"
+              class="px-6 py-2 rounded-full font-bold uppercase text-sm tracking-widest transition-all border-2 bg-white border-slate-900 text-slate-900 hover:bg-slate-50"
+             >
+              Enter Customize Mode
+             </button>
+             <button 
+              id="reset-btn"
+              class="px-6 py-2 rounded-full font-bold uppercase text-sm tracking-widest bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all"
+             >
+              Reset
+             </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Canvas Area -->
+      <div class="max-w-4xl mx-auto my-12 px-4">
+        <div 
+          id="portfolio-container"
+          class="bg-white shadow-2xl rounded-3xl overflow-hidden border border-slate-200 min-h-[800px] relative"
+        >
+          <!-- Portfolio sections will be inserted here -->
+        </div>
+      </div>
+
+      <!-- Floating Panel (Bottom Right) -->
+      <div id="customizer-panel" class="fixed bottom-8 right-8 w-72 bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 z-50 hidden">
+        <h4 class="font-anton text-slate-900 mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-palette text-amber-500"></i> Customizer
+        </h4>
+        
+        <div class="space-y-6">
+          <div>
+            <label class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2">Theme Color</label>
+            <div class="flex gap-2 flex-wrap">
+              <button class="theme-color-btn w-8 h-8 rounded-full border-2 border-amber-500 scale-110" data-color="#0f172a" style="background-color: #0f172a;"></button>
+              <button class="theme-color-btn w-8 h-8 rounded-full border-2 border-transparent" data-color="#1e40af" style="background-color: #1e40af;"></button>
+              <button class="theme-color-btn w-8 h-8 rounded-full border-2 border-transparent" data-color="#1e293b" style="background-color: #1e293b;"></button>
+              <button class="theme-color-btn w-8 h-8 rounded-full border-2 border-transparent" data-color="#b91c1c" style="background-color: #b91c1c;"></button>
+              <button class="theme-color-btn w-8 h-8 rounded-full border-2 border-transparent" data-color="#064e3b" style="background-color: #064e3b;"></button>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100">
+             <p class="text-[10px] text-slate-400 leading-tight">
+               * Click on text headings or descriptions inside the portfolio to edit them directly in real-time.
+             </p>
+          </div>
+
+          <button 
+            id="save-exit-btn"
+            class="w-full py-3 bg-slate-900 text-white font-bold rounded-lg uppercase text-xs tracking-widest hover:bg-slate-800 transition-all"
+          >
+            Save & Exit
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-1">
+                <a href="home.html" class="flex items-center gap-2 mb-6">
+                    <div class="w-10 h-10 bg-amber-500 rounded flex items-center justify-center">
+                        <span class="text-slate-900 font-anton text-2xl leading-none">JK</span>
+                    </div>
+                    <span class="text-2xl font-anton tracking-tight text-white">PORTFOLIOS</span>
+                </a>
+                <p class="text-sm leading-relaxed mb-6">
+                    Mobile-first student-athlete profiles designed to present performance, academics, and potential with
+                    clarity and purpose.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-sm">
+                    <li>
+                        <a href="home.html" class="hover:text-white transition-colors">Home</a>
+                    </li>
+                    <li>
+                        <a href="demo.html" class="hover:text-white transition-colors">Interactive Demo</a>
+                    </li>
+                    <li>
+                        <a href="examples.html" class="hover:text-white transition-colors">Example Gallery</a>
+                    </li>
+                    <li>
+                        <a href="services.html" class="hover:text-white transition-colors">Services & Pricing</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Support</h4>
+                <ul class="space-y-4 text-sm">
+                    <li>
+                        <a href="process.html" class="hover:text-white transition-colors">How It Works</a>
+                    </li>
+                    <li>
+                        <a href="faq.html" class="hover:text-white transition-colors">Frequently Asked Questions</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="hover:text-white transition-colors">Request a Quote</a>
+                    </li>
+                    <li>
+                        <a href="mailto:jkubon8698@gmail.com" class="hover:text-white transition-colors">Email Support</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-phone mt-1 text-amber-500"></i>
+                        <span>864-354-5995</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-envelope mt-1 text-amber-500"></i>
+                        <span>jkubon8698@gmail.com</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-globe mt-1 text-amber-500"></i>
+                        <span>www.jadenkubon.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-slate-800 text-center text-xs opacity-60">
+            <p>&copy; 2026 Jaden Kubon Portfolios. All rights reserved. | Professional Portfolios for Student-Athletes</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initial data
+        let portfolioData = {
+            name: "JOHN LEMONS",
+            sport: "SOCCER",
+            gradYear: "2025",
+            position: "CENTER MIDFIELD",
+            stats: [
+                { label: "Games Played", value: "22" },
+                { label: "Goals", value: "14" },
+                { label: "Assists", value: "18" },
+                { label: "Shots on Goal", value: "45" },
+                { label: "Minutes Played", value: "1,980" },
+                { label: "Yellow Cards", value: "2" }
+            ],
+            academics: [
+                "GPA: 3.9 Unweighted",
+                "National Honor Society",
+                "AP Scholar",
+                "Honor Roll - All Semesters",
+                "Student Council Member",
+                "Community Service: 120+ Hours"
+            ],
+            awards: [
+                "All-Region First Team",
+                "Conference MVP"
+            ],
+            themeColor: "#0f172a"
+        };
+
+        let sections = ['hero', 'stats', 'academics', 'highlights', 'appraisals'];
+        let isCustomizeMode = false;
+        let draggedItem = null;
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Customize mode toggle
+        const customizeBtn = document.getElementById('customize-btn');
+        const customizerPanel = document.getElementById('customizer-panel');
+        const resetBtn = document.getElementById('reset-btn');
+        const saveExitBtn = document.getElementById('save-exit-btn');
+
+        customizeBtn.addEventListener('click', function() {
+            isCustomizeMode = !isCustomizeMode;
+            if (isCustomizeMode) {
+                customizeBtn.textContent = 'Customizing...';
+                customizeBtn.classList.remove('bg-white', 'border-slate-900');
+                customizeBtn.classList.add('bg-amber-500', 'border-amber-500', 'text-slate-900');
+                customizerPanel.classList.remove('hidden');
+                renderPortfolio();
+            } else {
+                customizeBtn.textContent = 'Enter Customize Mode';
+                customizeBtn.classList.remove('bg-amber-500', 'border-amber-500');
+                customizeBtn.classList.add('bg-white', 'border-slate-900');
+                customizerPanel.classList.add('hidden');
+                renderPortfolio();
+            }
+        });
+
+        saveExitBtn.addEventListener('click', function() {
+            isCustomizeMode = false;
+            customizeBtn.textContent = 'Enter Customize Mode';
+            customizeBtn.classList.remove('bg-amber-500', 'border-amber-500');
+            customizeBtn.classList.add('bg-white', 'border-slate-900');
+            customizerPanel.classList.add('hidden');
+            renderPortfolio();
+        });
+
+        resetBtn.addEventListener('click', function() {
+            // Reset data
+            portfolioData = {
+                name: "JOHN LEMONS",
+                sport: "SOCCER",
+                gradYear: "2025",
+                position: "CENTER MIDFIELD",
+                stats: [
+                    { label: "Games Played", value: "22" },
+                    { label: "Goals", value: "14" },
+                    { label: "Assists", value: "18" },
+                    { label: "Shots on Goal", value: "45" },
+                    { label: "Minutes Played", value: "1,980" },
+                    { label: "Yellow Cards", value: "2" }
+                ],
+                academics: [
+                    "GPA: 3.9 Unweighted",
+                    "National Honor Society",
+                    "AP Scholar",
+                    "Honor Roll - All Semesters",
+                    "Student Council Member",
+                    "Community Service: 120+ Hours"
+                ],
+                awards: [
+                    "All-Region First Team",
+                    "Conference MVP"
+                ],
+                themeColor: "#0f172a"
+            };
+            sections = ['hero', 'stats', 'academics', 'highlights', 'appraisals'];
+            
+            // Exit customize mode
+            isCustomizeMode = false;
+            customizeBtn.textContent = 'Enter Customize Mode';
+            customizeBtn.classList.remove('bg-amber-500', 'border-amber-500');
+            customizeBtn.classList.add('bg-white', 'border-slate-900');
+            customizerPanel.classList.add('hidden');
+            
+            renderPortfolio();
+            updateThemeColorButtons();
+        });
+
+        // Theme color buttons
+        document.querySelectorAll('.theme-color-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                portfolioData.themeColor = this.getAttribute('data-color');
+                document.querySelectorAll('.theme-color-btn').forEach(b => {
+                    b.classList.remove('border-amber-500', 'scale-110');
+                    b.classList.add('border-transparent');
+                });
+                this.classList.remove('border-transparent');
+                this.classList.add('border-amber-500', 'scale-110');
+                renderPortfolio();
+            });
+        });
+
+        function updateThemeColorButtons() {
+            document.querySelectorAll('.theme-color-btn').forEach(btn => {
+                if (btn.getAttribute('data-color') === portfolioData.themeColor) {
+                    btn.classList.remove('border-transparent');
+                    btn.classList.add('border-amber-500', 'scale-110');
+                } else {
+                    btn.classList.remove('border-amber-500', 'scale-110');
+                    btn.classList.add('border-transparent');
+                }
+            });
+        }
+
+        // Drag and drop
+        function handleDragStart(e, id) {
+            if (!isCustomizeMode) return;
+            draggedItem = id;
+            e.dataTransfer.effectAllowed = 'move';
+        }
+
+        function handleDragOver(e) {
+            if (!isCustomizeMode) return;
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+        }
+
+        function handleDrop(e, id) {
+            if (!draggedItem || draggedItem === id || !isCustomizeMode) return;
+            
+            const newSections = [...sections];
+            const draggedIdx = newSections.indexOf(draggedItem);
+            const targetIdx = newSections.indexOf(id);
+            
+            newSections.splice(draggedIdx, 1);
+            newSections.splice(targetIdx, 0, draggedItem);
+            
+            sections = newSections;
+            draggedItem = null;
+            renderPortfolio();
+        }
+
+        // Render portfolio sections
+        function renderPortfolio() {
+            const container = document.getElementById('portfolio-container');
+            container.style.setProperty('--theme', portfolioData.themeColor);
+            
+            container.innerHTML = sections.map(sectionId => {
+                const sectionHtml = getSectionHTML(sectionId);
+                const dragClass = isCustomizeMode ? 'cursor-move hover:bg-amber-50/50 group' : '';
+                return `
+                    <div 
+                        class="relative transition-all ${dragClass}"
+                        draggable="${isCustomizeMode}"
+                        ondragstart="handleDragStart(event, '${sectionId}')"
+                        ondragover="handleDragOver(event)"
+                        ondrop="handleDrop(event, '${sectionId}')"
+                    >
+                        ${isCustomizeMode ? `
+                            <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-amber-500 text-white px-2 py-1 rounded text-[10px] font-bold z-10">
+                                <i class="fa-solid fa-up-down-left-right mr-1"></i> DRAG TO MOVE
+                            </div>
+                        ` : ''}
+                        ${sectionHtml}
+                    </div>
+                `;
+            }).join('');
+            
+            // Make editable elements interactive
+            if (isCustomizeMode) {
+                makeEditable();
+            }
+        }
+
+        function makeEditable() {
+            document.querySelectorAll('[data-editable]').forEach(el => {
+                el.contentEditable = true;
+                el.classList.add('hover:bg-amber-100/30', 'px-1', 'rounded', 'transition-colors');
+                el.addEventListener('blur', function() {
+                    const field = this.getAttribute('data-field');
+                    const statValue = this.getAttribute('data-stat-value');
+                    const statLabel = this.getAttribute('data-stat-label');
+                    const academic = this.getAttribute('data-academic');
+                    
+                    if (field) {
+                        portfolioData[field] = this.textContent.trim();
+                    } else if (statValue !== null) {
+                        portfolioData.stats[parseInt(statValue)].value = this.textContent.trim();
+                    } else if (statLabel !== null) {
+                        portfolioData.stats[parseInt(statLabel)].label = this.textContent.trim();
+                    } else if (academic !== null) {
+                        portfolioData.academics[parseInt(academic)] = this.textContent.trim();
+                    }
+                });
+            });
+        }
+
+        function getSectionHTML(id) {
+            switch(id) {
+                case 'hero':
+                    return `
+                        <section class="relative h-[400px] flex items-center justify-center text-center p-8 bg-slate-900 text-white overflow-hidden">
+                            <div class="absolute inset-0 z-0 opacity-40">
+                                <img src="../images/johnlemonshero.png" class="w-full h-full object-cover" alt="bg" />
+                            </div>
+                            <div class="relative z-10">
+                                <h1 class="font-anton text-4xl md:text-6xl mb-4" data-editable data-field="name">${portfolioData.name}</h1>
+                                <div class="text-amber-500 font-montserrat font-bold text-sm tracking-[0.2em] mb-4" data-editable>
+                                    CLASS OF ${portfolioData.gradYear} | ${portfolioData.sport} | ${portfolioData.position}
+                                </div>
+                            </div>
+                        </section>
+                    `;
+                case 'stats':
+                    return `
+                        <section class="py-12 px-8" style="background-color: ${portfolioData.themeColor};">
+                            <h2 class="text-center text-white mb-8 font-anton text-2xl" data-editable>Performance Stats</h2>
+                            <div class="grid grid-cols-3 gap-4">
+                                ${portfolioData.stats.map((s, i) => `
+                                    <div class="bg-white/10 p-4 rounded-xl text-center border border-white/10">
+                                        <div class="text-3xl font-anton text-amber-500" data-editable data-stat-value="${i}">${s.value}</div>
+                                        <div class="text-[10px] uppercase font-bold text-white/60" data-editable data-stat-label="${i}">${s.label}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </section>
+                    `;
+                case 'academics':
+                    return `
+                        <section class="py-12 px-8 bg-white border-b border-slate-100">
+                            <h2 class="mb-6 text-slate-900 font-anton text-2xl" data-editable data-field="academics">Academics & Character</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-4">
+                                    ${portfolioData.academics.slice(0, 5).map((item, i) => `
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-amber-600">
+                                                <i class="fa-solid fa-check text-xs"></i>
+                                            </div>
+                                            <span class="text-slate-600 text-sm font-medium" data-editable data-academic="${i}">${item}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                <div class="space-y-4">
+                                    ${portfolioData.academics.slice(5).map((item, i) => `
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-amber-600">
+                                                <i class="fa-solid fa-check text-xs"></i>
+                                            </div>
+                                            <span class="text-slate-600 text-sm font-medium" data-editable data-academic="${i + 5}">${item}</span>
+                                        </div>
+                                    `).join('')}
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-amber-600">
+                                            <i class="fa-solid fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-slate-600 text-sm font-medium" data-editable>Varsity Captain - Junior & Senior Year</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-amber-600">
+                                            <i class="fa-solid fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-slate-600 text-sm font-medium" data-editable>Leadership Award Recipient</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-amber-600">
+                                            <i class="fa-solid fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-slate-600 text-sm font-medium" data-editable>Team Player of the Year</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    `;
+                case 'highlights':
+                    return `
+                        <section class="py-12 px-8" style="background-color: ${portfolioData.themeColor};">
+                            <h2 class="text-center text-white mb-8 font-anton text-2xl" data-editable>Highlight Gallery</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-white/10 rounded-xl overflow-hidden border border-white/10">
+                                    <img src="../images/jamesmasterimage1.png" class="w-full h-48 object-cover" style="object-position: center 30%;" alt="Highlight 1" />
+                                </div>
+                                <div class="bg-white/10 rounded-xl overflow-hidden border border-white/10">
+                                    <img src="../images/jamesmaster2.jpg" class="w-full h-48 object-cover" alt="Highlight 2" />
+                                </div>
+                                <div class="bg-white/10 rounded-xl overflow-hidden border border-white/10">
+                                    <img src="../images/jamesmasterimage3.png" class="w-full h-48 object-cover" alt="Highlight 3" />
+                                </div>
+                            </div>
+                        </section>
+                    `;
+                case 'appraisals':
+                    return `
+                        <section class="py-12 px-8 bg-slate-50">
+                            <h2 class="mb-6 font-anton text-2xl" data-editable>What Coaches Say</h2>
+                            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                                <p class="text-slate-700 italic mb-4 font-montserrat leading-relaxed" data-editable>
+                                    "One of the hardest working athletes I've had the pleasure of coaching. A natural leader with exceptional vision."
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-amber-500"></div>
+                                    <div>
+                                        <div class="font-bold text-slate-900 text-sm" data-editable>COACH SMITH</div>
+                                        <div class="text-[10px] text-slate-400 font-bold uppercase" data-editable>Varsity Soccer Head Coach</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    `;
+                default:
+                    return '';
+            }
+        }
+
+        // Initial render
+        renderPortfolio();
+        updateThemeColorButtons();
+
+        // Make functions global for inline event handlers
+        window.handleDragStart = handleDragStart;
+        window.handleDragOver = handleDragOver;
+        window.handleDrop = handleDrop;
+    </script>
+</body>
+</html>

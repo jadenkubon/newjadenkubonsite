@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - JK Portfolios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'anton': ['Anton', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+            <div class="px-4 sm:px-6 lg:px-8">
+              <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                  <a href="home.html" class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center">
+                      <span class="text-white font-anton text-xl leading-none">JK</span>
+                    </div>
+                    <span class="text-xl font-anton tracking-tight text-slate-900 hidden sm:block">PORTFOLIOS</span>
+                  </a>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-4">
+                  <a href="home.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Home</a>
+                  <a href="demo.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Demo</a>
+                  <a href="examples.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Examples</a>
+                  <a href="services.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Services</a>
+                  <a href="process.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Process</a>
+                  <a href="faq.html" class="px-3 py-2 text-sm font-bold text-slate-900 hover:text-amber-500 transition-colors">FAQ</a>
+                </div>
+      
+                <div class="flex items-center space-x-3">
+                  <a href="demo.html" class="hidden sm:inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-md text-slate-900 bg-amber-400 hover:bg-amber-500 transition-all uppercase tracking-wider">
+                    Try Demo
+                  </a>
+                  <a href="contact.html" class="inline-flex items-center px-4 py-2 border border-slate-900 text-sm font-bold rounded-md text-white bg-slate-900 hover:bg-slate-800 transition-all uppercase tracking-wider">
+                    Book Now
+                  </a>
+                  <button id="mobile-menu-button" class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-slate-900 hover:text-amber-500 transition-colors" aria-label="Menu">
+                    <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Mobile Menu -->
+              <div id="mobile-menu" class="hidden lg:hidden pb-4 border-t border-slate-200 mt-2">
+                <div class="flex flex-col space-y-2 pt-4">
+                  <a href="home.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Home</a>
+                  <a href="demo.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Demo</a>
+                  <a href="examples.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Examples</a>
+                  <a href="services.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Services</a>
+                  <a href="process.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Process</a>
+                  <a href="faq.html" class="px-3 py-2 text-sm font-bold text-slate-900 hover:text-amber-500 transition-colors">FAQ</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div class="bg-slate-50 py-24 min-h-screen">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h1 class="text-5xl font-anton mb-4">FAQ</h1>
+          <p class="text-xl text-slate-600">Common questions about athlete portfolios.</p>
+          <div class="w-24 h-2 bg-amber-500 mx-auto mt-6"></div>
+        </div>
+
+        <div class="space-y-12" id="faq-container">
+          <!-- FAQ sections will be inserted here -->
+        </div>
+
+        <div class="mt-20 p-12 bg-slate-900 rounded-[2.5rem] text-center text-white">
+           <h3 class="text-2xl font-anton mb-4 uppercase">Still have questions?</h3>
+           <p class="text-slate-400 mb-8">We're here to help you navigate the digital side of recruiting.</p>
+           <a href="mailto:jkubon8698@gmail.com" class="inline-flex items-center gap-3 px-8 py-4 bg-amber-500 text-slate-900 font-bold rounded-xl uppercase tracking-widest hover:bg-amber-400 transition-all">
+             Contact Support
+           </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-1">
+                <a href="home.html" class="flex items-center gap-2 mb-6">
+                    <div class="w-10 h-10 bg-amber-500 rounded flex items-center justify-center">
+                        <span class="text-slate-900 font-anton text-2xl leading-none">JK</span>
+                    </div>
+                    <span class="text-2xl font-anton tracking-tight text-white">PORTFOLIOS</span>
+                </a>
+                <p class="text-sm leading-relaxed mb-6">
+                    Mobile-first student-athlete profiles designed to present performance, academics, and potential with
+                    clarity and purpose.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-sm">
+                    <li>
+                        <a href="home.html" class="hover:text-white transition-colors">Home</a>
+                    </li>
+                    <li>
+                        <a href="demo.html" class="hover:text-white transition-colors">Interactive Demo</a>
+                    </li>
+                    <li>
+                        <a href="examples.html" class="hover:text-white transition-colors">Example Gallery</a>
+                    </li>
+                    <li>
+                        <a href="services.html" class="hover:text-white transition-colors">Services & Pricing</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Support</h4>
+                <ul class="space-y-4 text-sm">
+                    <li>
+                        <a href="process.html" class="hover:text-white transition-colors">How It Works</a>
+                    </li>
+                    <li>
+                        <a href="faq.html" class="hover:text-white transition-colors">Frequently Asked Questions</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="hover:text-white transition-colors">Request a Quote</a>
+                    </li>
+                    <li>
+                        <a href="mailto:jkubon8698@gmail.com" class="hover:text-white transition-colors">Email Support</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-phone mt-1 text-amber-500"></i>
+                        <span>864-354-5995</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-envelope mt-1 text-amber-500"></i>
+                        <span>jkubon8698@gmail.com</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-globe mt-1 text-amber-500"></i>
+                        <span>www.jadenkubon.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-slate-800 text-center text-xs opacity-60">
+            <p>&copy; 2026 Jaden Kubon Portfolios. All rights reserved. | Professional Portfolios for Student-Athletes</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Data
+        const FAQ_DATA = [
+            {
+                category: 'Portfolios',
+                questions: [
+                    { q: "How do coaches actually find my site?", a: "Most athletes share their unique portfolio link in their Twitter/X bios, email signatures to scouts, and on their Hudl or MaxPreps profiles. It acts as the central hub for your recruiting brand." },
+                    { q: "Will this work for any sport?", a: "Yes. While soccer and football are our most popular, we have custom stat layouts for basketball, baseball, volleyball, and individual sports like swimming or track." },
+                    { q: "Is it mobile-friendly?", a: "Absolutely. Mobile-first isn't just a buzzword for us; it's our core philosophy. Coaches view profiles on fields and in gyms, so we build for that environment." }
+                ]
+            },
+            {
+                category: 'The Build Process',
+                questions: [
+                    { q: "How long does it take to build?", a: "Once we have all your information (photos, stats, bio), our turnaround time is typically 3-5 business days." },
+                    { q: "Can I choose my own colors?", a: "Yes. You can match your high school colors, your club team, or your future college's branding. We help guide the aesthetic to ensure it looks professional." },
+                    { q: "Can I update the site myself?", a: "We manage the technical side to ensure high performance. If you're on a maintenance plan, you just text/email us your new stats or clips and we update it within 24-48 hours." }
+                ]
+            },
+            {
+                category: 'Pricing & Maintenance',
+                questions: [
+                    { q: "Is there a monthly fee?", a: "There is a one-time build fee for the initial design and setup. After that, we offer a small monthly maintenance plan for hosting, domain management, and content updates." },
+                    { q: "What happens if I want to cancel?", a: "You can cancel your maintenance plan at any time. We'll give you a copy of your site files, or we can archive the site for you if you're done with the recruiting process." }
+                ]
+            }
+        ];
+
+        let openIndex = '0-0'; // Open first question by default
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Toggle FAQ item
+        function toggleFAQ(id) {
+            if (openIndex === id) {
+                openIndex = null;
+            } else {
+                openIndex = id;
+            }
+            renderFAQ();
+        }
+
+        // Render FAQ sections
+        function renderFAQ() {
+            const container = document.getElementById('faq-container');
+            container.innerHTML = FAQ_DATA.map((group, groupIdx) => `
+                <div>
+                    <h2 class="text-2xl font-anton text-slate-900 mb-6 uppercase tracking-widest border-b border-slate-200 pb-2">
+                        ${group.category}
+                    </h2>
+                    <div class="space-y-4">
+                        ${group.questions.map((item, qIdx) => {
+                            const id = `${groupIdx}-${qIdx}`;
+                            const isOpen = openIndex === id;
+                            return `
+                                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden transition-all">
+                                    <button 
+                                        onclick="toggleFAQ('${id}')"
+                                        class="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 transition-colors"
+                                    >
+                                        <span class="font-bold text-slate-900">${item.q}</span>
+                                        <i class="fa-solid fa-chevron-down transition-transform duration-300 ${isOpen ? 'rotate-180 text-amber-500' : 'text-slate-300'}"></i>
+                                    </button>
+                                    <div class="transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96' : 'max-h-0'}">
+                                        <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                                            ${item.a}
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Make toggleFAQ global for onclick handlers
+        window.toggleFAQ = toggleFAQ;
+
+        // Initial render
+        renderFAQ();
+    </script>
+</body>
+</html>

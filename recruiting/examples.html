@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examples - JK Portfolios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'anton': ['Anton', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+            <div class="px-4 sm:px-6 lg:px-8">
+              <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                  <a href="home.html" class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center">
+                      <span class="text-white font-anton text-xl leading-none">JK</span>
+                    </div>
+                    <span class="text-xl font-anton tracking-tight text-slate-900 hidden sm:block">PORTFOLIOS</span>
+                  </a>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-4">
+                  <a href="home.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Home</a>
+                  <a href="demo.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Demo</a>
+                  <a href="examples.html" class="px-3 py-2 text-sm font-bold text-slate-900 hover:text-amber-500 transition-colors">Examples</a>
+                  <a href="services.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Services</a>
+                  <a href="process.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Process</a>
+                  <a href="faq.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">FAQ</a>
+                </div>
+      
+                <div class="flex items-center space-x-3">
+                  <a href="demo.html" class="hidden sm:inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-md text-slate-900 bg-amber-400 hover:bg-amber-500 transition-all uppercase tracking-wider">
+                    Try Demo
+                  </a>
+                  <a href="contact.html" class="inline-flex items-center px-4 py-2 border border-slate-900 text-sm font-bold rounded-md text-white bg-slate-900 hover:bg-slate-800 transition-all uppercase tracking-wider">
+                    Book Now
+                  </a>
+                  <button id="mobile-menu-button" class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-slate-900 hover:text-amber-500 transition-colors" aria-label="Menu">
+                    <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Mobile Menu -->
+              <div id="mobile-menu" class="hidden lg:hidden pb-4 border-t border-slate-200 mt-2">
+                <div class="flex flex-col space-y-2 pt-4">
+                  <a href="home.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Home</a>
+                  <a href="demo.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Demo</a>
+                  <a href="examples.html" class="px-3 py-2 text-sm font-bold text-slate-900 hover:text-amber-500 transition-colors">Examples</a>
+                  <a href="services.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Services</a>
+                  <a href="process.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">Process</a>
+                  <a href="faq.html" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-amber-500 transition-colors">FAQ</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div class="bg-white py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h1 class="text-5xl font-anton mb-4">Portfolio Examples</h1>
+          <p class="text-xl text-slate-600">Choose a style that fits your sport's energy.</p>
+          <div class="w-24 h-2 bg-amber-500 mx-auto mt-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20" id="examples-container">
+          <!-- Examples will be inserted here -->
+        </div>
+
+        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
+           <div class="relative z-10 max-w-2xl mx-auto">
+             <h2 class="text-3xl md:text-5xl font-anton mb-6 uppercase">Personalize your portfolio with our interactive demo</h2>
+             <p class="text-lg text-slate-400 mb-8">We're building out full live previews for every style. In the meantime, explore the layout options in our Interactive Playground.</p>
+             <a href="demo.html" class="inline-flex items-center gap-3 px-10 py-5 bg-amber-500 text-slate-900 font-bold rounded-2xl text-xl uppercase tracking-widest hover:bg-amber-400 transition-all">
+                Try the Demo
+             </a>
+           </div>
+           <!-- Abstract shapes -->
+           <div class="absolute top-[-20%] right-[-10%] w-96 h-96 bg-amber-500/10 rounded-full blur-[100px]"></div>
+           <div class="absolute bottom-[-20%] left-[-10%] w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-1">
+                <a href="home.html" class="flex items-center gap-2 mb-6">
+                    <div class="w-10 h-10 bg-amber-500 rounded flex items-center justify-center">
+                        <span class="text-slate-900 font-anton text-2xl leading-none">JK</span>
+                    </div>
+                    <span class="text-2xl font-anton tracking-tight text-white">PORTFOLIOS</span>
+                </a>
+                <p class="text-sm leading-relaxed mb-6">
+                    Mobile-first student-athlete profiles designed to present performance, academics, and potential with
+                    clarity and purpose.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-sm">
+                    <li>
+                        <a href="home.html" class="hover:text-white transition-colors">Home</a>
+                    </li>
+                    <li>
+                        <a href="demo.html" class="hover:text-white transition-colors">Interactive Demo</a>
+                    </li>
+                    <li>
+                        <a href="examples.html" class="hover:text-white transition-colors">Example Gallery</a>
+                    </li>
+                    <li>
+                        <a href="services.html" class="hover:text-white transition-colors">Services & Pricing</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Support</h4>
+                <ul class="space-y-4 text-sm">
+                    <li>
+                        <a href="process.html" class="hover:text-white transition-colors">How It Works</a>
+                    </li>
+                    <li>
+                        <a href="faq.html" class="hover:text-white transition-colors">Frequently Asked Questions</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="hover:text-white transition-colors">Request a Quote</a>
+                    </li>
+                    <li>
+                        <a href="mailto:jkubon8698@gmail.com" class="hover:text-white transition-colors">Email Support</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-phone mt-1 text-amber-500"></i>
+                        <span>864-354-5995</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-envelope mt-1 text-amber-500"></i>
+                        <span>jkubon8698@gmail.com</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-globe mt-1 text-amber-500"></i>
+                        <span>www.jadenkubon.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-slate-800 text-center text-xs opacity-60">
+            <p>&copy; 2026 Jaden Kubon Portfolios. All rights reserved. | Professional Portfolios for Student-Athletes</p>
+        </div>
+    </footer>
+
+    <script>
+        // Example data
+        const examples = [
+            { name: 'Modern Dark', tag: 'Jeremiah Smith', image: '../images/jeremiahsmithicon.png', link: 'https://student-athlete-portfolios.github.io/jeremiahsmith-soccer-onepager/' },
+            { name: 'Clean Minimal', tag: 'John Lemons', image: '../images/johnlemonsicon.png', link: 'https://student-athlete-portfolios.github.io/johnlemons-soccer-onepager/' },
+            { name: 'Action Bold', tag: 'James Masters', image: '../images/jamesmastersite.png', link: 'https://student-athlete-portfolios.github.io/jamesmasters-soccer-onepager/' },
+        ];
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Render examples
+        function renderExamples() {
+            const container = document.getElementById('examples-container');
+            container.innerHTML = examples.map((t, i) => `
+                <a href="${t.link || 'demo.html'}" class="group relative bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 h-[450px] block hover:shadow-xl transition-all cursor-pointer" ${t.link && t.link.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+                    <div class="h-2/3 overflow-hidden transition-transform group-hover:scale-105 duration-500">
+                        <img src="${t.image}" class="w-full h-full object-cover" alt="${t.name} example" />
+                    </div>
+                    <div class="p-8 bg-white h-1/3 absolute bottom-0 inset-x-0 border-t border-slate-100">
+                        <div class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-2">${t.tag}</div>
+                        <h3 class="text-xl font-anton mb-4 text-slate-900">${t.name}</h3>
+                        <span class="text-sm font-bold text-slate-900 border-b-2 border-slate-900 pb-1 inline-block group-hover:text-amber-500 group-hover:border-amber-500 transition-all">
+                           Preview Style
+                        </span>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        // Initial render
+        renderExamples();
+    </script>
+</body>
+</html>

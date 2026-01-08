@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // GitHub Pages 404.html router
+        // This handles clean URLs by redirecting to the correct .html file
+        
+        const path = window.location.pathname;
+        const pathLower = path.toLowerCase();
+        
+        // Remove trailing slash
+        const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+        
+        // Route mapping for clean URLs
+        const routes = {
+            '/recruiting': '/recruiting/home.html',
+            '/recruiting/home': '/recruiting/home.html',
+            '/recruiting/services': '/recruiting/services.html',
+            '/recruiting/examples': '/recruiting/examples.html',
+            '/recruiting/process': '/recruiting/process.html',
+            '/recruiting/faq': '/recruiting/faq.html',
+            '/recruiting/demo': '/recruiting/demo.html',
+            '/recruiting/contact': '/recruiting/contact.html'
+        };
+        
+        // Check if this is a known route
+        if (routes[cleanPath]) {
+            // Redirect to the .html file
+            window.location.replace(routes[cleanPath]);
+        } else {
+            // Check if it's a file that exists with .html extension
+            const possibleHtml = cleanPath + '.html';
+            
+            // Try to fetch it to see if it exists
+            fetch(possibleHtml, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.replace(possibleHtml);
+                    } else {
+                        // Show 404 page
+                        document.body.innerHTML = `
+                            <div style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+                                <h1>404 - Page Not Found</h1>
+                                <p>The page you're looking for doesn't exist.</p>
+                                <a href="/" style="color: #0066cc;">Go to Home</a>
+                            </div>
+                        `;
+                    }
+                })
+                .catch(() => {
+                    // Show 404 page
+                    document.body.innerHTML = `
+                        <div style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+                            <h1>404 - Page Not Found</h1>
+                            <p>The page you're looking for doesn't exist.</p>
+                            <a href="/" style="color: #0066cc;">Go to Home</a>
+                        </div>
+                    `;
+                });
+        }
+    </script>
+</head>
+<body>
+    <div style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+        <p>Redirecting...</p>
+    </div>
+</body>
+</html>
+
